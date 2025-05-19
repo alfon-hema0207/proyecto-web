@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Administrar Productos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <script src="scripts/productos.js" defer></script>
+    <script src="scripts/auth.js" defer></script>
+    <script src="scripts/auth-ui.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">TiendaOnline</a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link active">Inicio</a></li>
+            <li class="nav-item admin-only" style="display: none;"><a href="productos.html" class="nav-link">Admin Productos</a></li>
+            <li class="nav-item"><a href="venta.html" class="nav-link">Comprar</a></li>
+            <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Cuenta ▼</a>
+                <ul class="dropdown-menu">
+                    <li id="login-item"><a href="login.html" class="dropdown-item">Iniciar sesión</a></li>
+                    <li id="register-item"><a href="register.html" class="dropdown-item">Registrarse</a></li>
+                    <li id="admin-item" class="admin-only" style="display: none;"><a href="productos.html" class="dropdown-item">Panel Admin</a></li>
+                    <li id="logout-item" style="display: none;"><a href="#" id="logout-link" class="dropdown-item">Cerrar sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Agregar Producto</h1>
+        <a href="index.html" class="btn-back">← Volver</a>
+    </header>
+
+    <main class="form-container">
+        <form id="formProducto">
+            <div class="form-group">
+                <label for="nombre" class="form-label">Nombre del producto</label>
+                <input type="text" id="nombre" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="precio" class="form-label">Precio ($)</label>
+                <input type="number" id="precio" class="form-input" step="0.01" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea id="descripcion" class="form-textarea"></textarea>
+            </div>
+            
+            <button type="submit" class="form-button">Guardar Producto</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Productos | Tienda Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <script src="scripts/venta.js" defer></script>
+    <script src="scripts/auth-ui.js" defer></script>
+    <script src="scripts/auth.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">TiendaOnline</a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="nav-item admin-only" style="display: none;"><a href="productos.html" class="nav-link">Admin Productos</a></li>
+            <li class="nav-item"><a href="venta.html" class="nav-link active">Comprar</a></li>
+            <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Cuenta ▼</a>
+                <ul class="dropdown-menu">
+                    <li id="login-item"><a href="login.html" class="dropdown-item">Iniciar sesión</a></li>
+                    <li id="register-item"><a href="register.html" class="dropdown-item">Registrarse</a></li>
+                    <li id="admin-item" class="admin-only" style="display: none;"><a href="productos.html" class="dropdown-item">Panel Admin</a></li>
+                    <li id="logout-item" style="display: none;"><a href="#" id="logout-link" class="dropdown-item">Cerrar sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Productos Disponibles</h1>
+        
+        <div class="productos-grid">
+            <!-- Los productos se cargarán dinámicamente con JS -->
+        </div>
+        
+        <div class="terms-group">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">Acepto los <a href="#" style="color: var(--primary-color)">términos y condiciones</a></label>
+        </div>
+        
+        <div class="form-actions">
+            <button id="btnComprar" class="form-button">Enviar Pedido</button>
+            <button id="btnCancelar" class="form-button" style="background-color: var(--danger-color)">Cancelar</button>
+        </div>
+    </div>
+    
+    <div class="checkout-sidebar">
+        <h2 class="checkout-title">Tu Carrito</h2>
+        <div class="checkout-items">
+            <!-- Los items se agregarán dinámicamente -->
+        </div>
+        <div class="checkout-total">Total: $<span id="total">0.00</span></div>
+        <button class="checkout-close">Cerrar</button>
+    </div>
+    
+    <button id="btnCarrito" class="carrito-btn">🛒 <span class="carrito-count">0</span></button>
+</body>
+</html>
